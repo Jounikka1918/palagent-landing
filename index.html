@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="fi">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Palagent – Maksuton kartoitus</title>
+  <meta name="description" content="Tekoäly, joka ymmärtää sinua. Varaa maksuton kartoitus – nopeasti ja ilman sitoumuksia." />
+  <link rel="icon" href="assets/pali.png">
+  <link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <div class="brand">
+        <img src="assets/pali.png" alt="Palagent hanhi-logo Pali">
+        <strong>PALAGENT</strong>
+      </div>
+      <nav class="nav">
+        <a class="ghost btn" href="#palvelut">Palvelut</a>
+        <a class="ghost btn" href="#tavoitetakuu">Tavoitetakuu</a>
+        <a class="btn alt" href="#kartoitus">Maksuton kartoitus</a>
+      </nav>
+    </header>
+
+    <section class="hero">
+      <span class="badge">Tekoäly, joka ymmärtää sinua</span>
+      <h1><span class="g">Nopea, moderni</span> landing + lomake – varaa maksuton kartoitus yhdellä klikkauksella.</h1>
+      <p>Autamme, kun palaverit jäävät dokumentoimatta, tieto on hajallaan tai perehdytys vie liikaa aikaa.
+         Yksi lomake riittää – palaamme samana arkipäivänä.</p>
+    </section>
+
+    <div class="grid">
+      <section id="palvelut" class="card">
+        <h2>Mitä saat</h2>
+        <ul class="list">
+          <li><span class="dot"></span><span>Kohtaamisagentti & palaverikoosteet – selkeät muistiot automaattisesti</span></li>
+          <li><span class="dot"></span><span>Tietoagentti – löydä “kuka tiesi mitä” sekunneissa</span></li>
+          <li><span class="dot"></span><span>Perehdytysagentti – uudet tekijät käyntiin ilman ylimääräistä säätöä</span></li>
+        </ul>
+        <p class="muted" style="margin-top:10px">Painopiste: konkreettiset hyödyt, suomenkielinen kokemus, matala käyttöönotto.</p>
+        <div class="ribbon">
+          <img src="assets/tavoitetakuu.png" alt="Tavoitetakuu-mitali">
+          <div>
+            <div class="kicker">Tavoitetakuu</div>
+            <p class="muted">Suunnittelemme apulaisagentin yhdessä kanssasi – teemme niin pitkään hommia, että
+            sovittu tavoite toteutuu. Tilaaja sitoutuu käyttämään palvelua ohjeistetusti. Lisäpyynnöt sovitaan erikseen.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- LOMAKE: Netlify Forms -->
+      <section id="kartoitus" class="card">
+        <h2>Varaa maksuton kartoitus</h2>
+        <div id="ok" class="notice" role="status" aria-live="polite">Kiitos! Viestisi on vastaanotettu.</div>
+
+        <form name="kartoitus" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="/thanks.html">
+          <input type="text" name="bot-field" autocomplete="off" style="display:none" />
+          <div class="row">
+            <div>
+              <label for="nimi">Nimi *</label>
+              <input id="nimi" name="Nimi" type="text" required autocomplete="name" />
+            </div>
+            <div>
+              <label for="yritys">Yritys *</label>
+              <input id="yritys" name="Yritys" type="text" required autocomplete="organization" />
+            </div>
+          </div>
+          <div class="row">
+            <div>
+              <label for="puhelin">Puhelin *</label>
+              <input id="puhelin" name="Puhelin" type="tel" inputmode="tel" required autocomplete="tel" />
+            </div>
+            <div>
+              <label for="email">Sähköposti *</label>
+              <input id="email" name="Sähköposti" type="email" required autocomplete="email" />
+            </div>
+          </div>
+          <label for="kuvaus">Missä voimme olla avuksi?</label>
+          <textarea id="kuvaus" name="Kuvaus" placeholder="Kerro tilanteestasi lyhyesti (valinnainen)"></textarea>
+
+          <label style="display:inline-flex;gap:.6rem;align-items:center;margin:.6rem 0">
+            <input type="checkbox" name="Postituslista" value="Kyllä" />
+            Haluan liittyä postituslistalle (voit perua milloin vain)
+          </label>
+
+          <input type="hidden" name="Lomake" value="Maksuton kartoitus" />
+          <div class="actions">
+            <button class="btn" type="submit" id="send">Lähetä pyyntö</button>
+            <span class="muted">Lähettämällä hyväksyt tietosuojan (älä lähetä arkaluonteista tietoa).</span>
+          </div>
+        </form>
+      </section>
+    </div>
+
+    <section class="section faq" id="tavoitetakuu">
+      <h2>Usein kysyttyä</h2>
+      <details><summary>Mitä “Tavoitetakuu” tarkoittaa käytännössä?</summary>
+        <p>Rakennamme apulaisagentin yhdessä tilaajan kanssa. Teemme työtä, kunnes sovittu tavoite toteutuu.
+        Tilaaja sitoutuu käyttämään palvelua ohjeistetusti. Jos matkan varrella tulee uusia tarpeita tai laajennuksia,
+        sovimme niistä erikseen ennen toteutusta.</p>
+      </details>
+      <details><summary>Onko tämä ohjelmistoa vai konsultointia?</summary>
+        <p>Perusydin on ohjelmistoa (agenttialusta), mutta toimitus muistuttaa konsultointia: määrittely, toteutus,
+        käyttöönotto ja onnistumisen varmistus – siksi tarjoamme Tavoitetakuun.</p>
+      </details>
+      <details><summary>Mitä tapahtuu kartoituksen jälkeen?</summary>
+        <p>Toimitamme tiiviin ehdotuksen etenemisestä ja aikataulusta. Päätät itse, jatketaanko toteutukseen.</p>
+      </details>
+      <details><summary>Miten tietosuoja ja data?</summary>
+        <p>Käytämme EU-palveluita ja minimoimme datan käsittelyn. Asiakaskohtaiset tietosuojakäytännöt dokumentoidaan
+        ennen käyttöönottoa.</p>
+      </details>
+    </section>
+
+    <footer>
+      © <span id="y"></span> Palagent — Tekoäly, joka ymmärtää sinua
+    </footer>
+  </div>
+  <script>
+    document.getElementById('y').textContent = new Date().getFullYear();
+    document.querySelector('form').addEventListener('submit', e=>{{const b=document.getElementById('send');b.disabled=true;b.textContent='Lähetetään…';}});
+  </script>
+</body>
+</html>
